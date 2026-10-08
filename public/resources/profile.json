@@ -1,0 +1,55 @@
+{
+  "name": "Syed Zakiuddin",
+  "title": "Senior Frontend / Full Stack Developer — React, TypeScript, WebRTC, Electron",
+  "location": "Hyderabad, Telangana (open to relocation anywhere)",
+  "years": 6,
+  "summary": "6+ years building scalable web, desktop and real-time applications. Specialised in React, Redux and TypeScript; recent focus on the MeetHour WebRTC conferencing platform (Jitsi stack, Prosody/XMPP, Electron) and serverless AWS products at ScaleCapacity.",
+  "github": "https://github.com/zaki-vempower",
+  "linkedin": "http://linkedin.com/in/zakiuddin-syed-31710b15a",
+  "certification": {
+    "name": "AWS Certified Developer – Associate (DVA-C02)",
+    "valid": "June 2023 – June 2026",
+    "url": "https://www.credly.com/badges/a57637bd-3e3a-4f5f-b131-f5700bede0f0/linked_in_profile"
+  },
+  "roles": [
+    {
+      "company": "V-Empower Inc (MeetHour)",
+      "title": "Senior Frontend Developer",
+      "period": "Aug 2025 – Present",
+      "focus": ["Multi-Jibri recording & live streaming", "Electron app revamp (annotations, PiP, local recording)", "Visitor, Backstage, Webinar modes", "Multi-stream & virtual background", "Prosody/XMPP, WebRTC, Docker"]
+    },
+    {
+      "company": "ScaleCapacity",
+      "title": "Senior Front End Developer",
+      "period": "Jan 2023 – Present",
+      "focus": ["Nebraska Draw (React + Vite + Jotai, Lambda/API Gateway/DynamoDB)", "RBF — Claude 3.5 Sonnet PDF redaction", "LoadOTR logistics dashboard (Node.js)", "scQuill transcription editor (CKEditor, Azure AD SSO)", "SCAI intelligent document processing"]
+    },
+    {
+      "company": "V-Empower Inc",
+      "title": "Front End Developer",
+      "period": "Jan 2019 – Dec 2022",
+      "focus": ["MeetHour: multiple live streaming & recording", "Audio/video moderation", "Donorbox, whiteboard and Etherpad integrations", "React/Redux SPAs, Enzyme + Jasmine/Karma tests", "Docker deployments"]
+    }
+  ],
+  "skills": [
+    { "group": "Frontend", "items": ["React.js", "Redux / RTK", "TypeScript", "JavaScript (ES2024)", "Next.js", "Vue.js", "Angular", "HTML5", "CSS3 / SASS / LESS", "Jotai", "SWR"] },
+    { "group": "Real-time & desktop", "items": ["WebRTC", "Jitsi (Jicofo, JVB, Jibri)", "Prosody (XMPP)", "WebSockets", "Electron", "React Native"] },
+    { "group": "Backend & languages", "items": ["Node.js", "Java", "Kotlin", "Python", "PostgreSQL", "DynamoDB", "REST APIs"] },
+    { "group": "Cloud & tooling", "items": ["AWS Lambda", "API Gateway", "S3", "Docker", "Jenkins", "Git / GitHub", "Linux", "Vite", "Webpack"] },
+    { "group": "Testing & process", "items": ["Jest", "React Testing Library", "Enzyme", "Jasmine / Karma", "Agile / Scrum", "Code reviews"] }
+  ],
+  "studyPlan": [
+    { "day": "Day 1", "focus": "Your story and both project deep dives — these decide the interview.", "docs": ["elevator-pitch", "meethour-deep-dive", "scalecapacity-projects"] },
+    { "day": "Day 2", "focus": "JavaScript core and async; run every output puzzle in the playground.", "docs": ["javascript-core", "javascript-async", "js-output-questions"] },
+    { "day": "Day 3", "focus": "React internals, hooks and performance — your primary skill.", "docs": ["react-internals", "react-hooks-patterns", "react-performance"] },
+    { "day": "Day 4", "focus": "State management, TypeScript and machine-coding drills.", "docs": ["state-management", "typescript", "machine-coding"] },
+    { "day": "Day 5", "focus": "Real-time specialty: WebRTC, Jitsi/Prosody, Electron, WebSockets.", "docs": ["webrtc", "jitsi-prosody-xmpp", "electron", "websockets-realtime"] },
+    { "day": "Day 6", "focus": "Other frameworks: Next.js, Vue, Angular, React Native.", "docs": ["nextjs", "vue", "angular", "react-native"] },
+    { "day": "Day 7", "focus": "Web platform: browser internals, CSS, security/auth, testing.", "docs": ["browser-internals", "html-css-a11y", "web-security-auth", "testing"] },
+    { "day": "Day 8", "focus": "Full stack: Node.js, databases, AWS, Docker/CI-CD.", "docs": ["nodejs", "databases-sql", "aws-serverless", "docker-devops"] },
+    { "day": "Day 9", "focus": "JVM languages and Python.", "docs": ["java", "kotlin", "python"] },
+    { "day": "Day 10", "focus": "DSA practice — solve before reading the solutions.", "docs": ["dsa-foundations", "dsa-arrays-strings", "dsa-linked-lists-stacks"] },
+    { "day": "Day 11", "focus": "More DSA, then system design.", "docs": ["dsa-trees-graphs", "dsa-dp-greedy", "frontend-system-design"] },
+    { "day": "Day 12", "focus": "Behavioural stories, LLM integration, cheat sheet, and a full mock interview.", "docs": ["behavioral-hr", "ai-llm-integration", "last-day-cheatsheet"] }
+  ]
+}

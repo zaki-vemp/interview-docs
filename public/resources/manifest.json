@@ -1,0 +1,628 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-10-08",
+  "categories": [
+    {
+      "id": "profile",
+      "title": "Your Resume & Story",
+      "icon": "🧑‍💼",
+      "description": "Questions that come straight from the resume: your introduction, every project, the overlap in dates, behavioural and HR rounds.",
+      "docs": [
+        {
+          "slug": "elevator-pitch",
+          "title": "Tell Me About Yourself & Career Story",
+          "description": "30-second, 2-minute and 5-minute introductions, career transitions, why you are moving, and how to talk about each role.",
+          "level": "Core",
+          "tags": [
+            "intro",
+            "career",
+            "resume"
+          ],
+          "minutes": 20,
+          "questions": 26,
+          "hot": 12
+        },
+        {
+          "slug": "meethour-deep-dive",
+          "title": "MeetHour Project Deep Dive",
+          "description": "Multi-Jibri recording & streaming, Visitor/Backstage/Webinar modes, the Electron revamp, multi-stream, virtual background and Excalidraw tracking.",
+          "level": "Expert",
+          "tags": [
+            "webrtc",
+            "jitsi",
+            "electron",
+            "architecture"
+          ],
+          "minutes": 40,
+          "questions": 31,
+          "hot": 17
+        },
+        {
+          "slug": "scalecapacity-projects",
+          "title": "ScaleCapacity Projects Deep Dive",
+          "description": "Nebraska Draw, RBF (Claude-powered PDF redaction), LoadOTR, scQuill and SCAI — architecture, decisions and hard problems.",
+          "level": "Advanced",
+          "tags": [
+            "react",
+            "aws",
+            "serverless",
+            "llm"
+          ],
+          "minutes": 30,
+          "questions": 30,
+          "hot": 19
+        },
+        {
+          "slug": "behavioral-hr",
+          "title": "Behavioral (STAR) & HR Round",
+          "description": "STAR stories mapped to your experience, Agile/Scrum questions, salary and notice-period negotiation, and questions to ask them.",
+          "level": "Core",
+          "tags": [
+            "behavioral",
+            "star",
+            "agile",
+            "hr"
+          ],
+          "minutes": 20,
+          "questions": 30,
+          "hot": 13
+        },
+        {
+          "slug": "last-day-cheatsheet",
+          "title": "Last-Day Revision Cheat Sheet",
+          "description": "Dense one-liners and numbers to revise the night before: JS, React, WebRTC, Java, Kotlin, AWS, SQL, Big-O.",
+          "level": "Core",
+          "tags": [
+            "revision",
+            "cheatsheet"
+          ],
+          "minutes": 25,
+          "questions": 19,
+          "hot": 11
+        }
+      ]
+    },
+    {
+      "id": "js",
+      "title": "JavaScript & TypeScript",
+      "icon": "🟨",
+      "description": "The language itself at senior depth — the area every frontend round starts with.",
+      "docs": [
+        {
+          "slug": "javascript-core",
+          "title": "JavaScript Core (Advanced)",
+          "description": "Types and coercion, scope, hoisting, TDZ, closures, this, prototypes, classes, modules, iterators, generators, Proxy, memory.",
+          "level": "Advanced",
+          "tags": [
+            "closures",
+            "prototypes",
+            "this",
+            "es2024"
+          ],
+          "minutes": 40,
+          "questions": 38,
+          "hot": 25
+        },
+        {
+          "slug": "javascript-async",
+          "title": "Async JavaScript & the Event Loop",
+          "description": "Event loop, microtasks vs macrotasks, promises in depth, async/await, cancellation, concurrency control, retries, streams.",
+          "level": "Advanced",
+          "tags": [
+            "event-loop",
+            "promises",
+            "async"
+          ],
+          "minutes": 25,
+          "questions": 26,
+          "hot": 16
+        },
+        {
+          "slug": "js-output-questions",
+          "title": "Predict the Output (Tricky JS)",
+          "description": "Classic and nasty output-prediction puzzles with runnable code and step-by-step explanations.",
+          "level": "Advanced",
+          "tags": [
+            "output",
+            "puzzles",
+            "runnable"
+          ],
+          "minutes": 20,
+          "questions": 40,
+          "hot": 16
+        },
+        {
+          "slug": "machine-coding",
+          "title": "Machine Coding & Polyfills",
+          "description": "Implement debounce, throttle, Promise.all, bind, deep clone, curry, EventEmitter, LRU cache, retry, promise pool… with tests.",
+          "level": "Advanced",
+          "tags": [
+            "polyfills",
+            "implementation",
+            "runnable"
+          ],
+          "minutes": 35,
+          "questions": 26,
+          "hot": 15
+        },
+        {
+          "slug": "typescript",
+          "title": "TypeScript (Advanced)",
+          "description": "Generics, conditional and mapped types, infer, template literal types, narrowing, utility types from scratch, typing React.",
+          "level": "Advanced",
+          "tags": [
+            "generics",
+            "types",
+            "react-ts"
+          ],
+          "minutes": 25,
+          "questions": 25,
+          "hot": 17
+        }
+      ]
+    },
+    {
+      "id": "frameworks",
+      "title": "Frontend Frameworks",
+      "icon": "⚛️",
+      "description": "React in depth (your core skill) plus Next.js, Vue, Angular and React Native at an advanced level.",
+      "docs": [
+        {
+          "slug": "react-internals",
+          "title": "React Internals & React 19",
+          "description": "Virtual DOM, reconciliation, Fiber, render/commit phases, batching, concurrent features, Suspense, hydration, Server Components, Actions, the React Compiler.",
+          "level": "Expert",
+          "tags": [
+            "fiber",
+            "concurrent",
+            "rsc",
+            "react19"
+          ],
+          "minutes": 25,
+          "questions": 25,
+          "hot": 20
+        },
+        {
+          "slug": "react-hooks-patterns",
+          "title": "React Hooks & Component Patterns",
+          "description": "Every hook in depth, stale closures, effect pitfalls, custom hooks, compound components, render props, HOCs, error boundaries, portals.",
+          "level": "Advanced",
+          "tags": [
+            "hooks",
+            "patterns",
+            "custom-hooks"
+          ],
+          "minutes": 25,
+          "questions": 29,
+          "hot": 16
+        },
+        {
+          "slug": "react-performance",
+          "title": "React & Web Performance",
+          "description": "Profiling, memoization, code splitting, virtualization, Core Web Vitals, bundle analysis, and how you refactored for render performance.",
+          "level": "Advanced",
+          "tags": [
+            "performance",
+            "web-vitals",
+            "profiling"
+          ],
+          "minutes": 20,
+          "questions": 20,
+          "hot": 13
+        },
+        {
+          "slug": "state-management",
+          "title": "State Management: Redux, RTK, Jotai, SWR & more",
+          "description": "Redux principles, middleware, Redux Toolkit and RTK Query, Jotai atoms, Zustand, Context, SWR and TanStack Query, and when to use which.",
+          "level": "Advanced",
+          "tags": [
+            "redux",
+            "jotai",
+            "swr",
+            "react-query"
+          ],
+          "minutes": 20,
+          "questions": 19,
+          "hot": 12
+        },
+        {
+          "slug": "nextjs",
+          "title": "Next.js (App Router)",
+          "description": "Server and client components, rendering strategies, caching layers, server actions, route handlers, middleware, streaming and deployment.",
+          "level": "Advanced",
+          "tags": [
+            "ssr",
+            "rsc",
+            "caching"
+          ],
+          "minutes": 20,
+          "questions": 19,
+          "hot": 12
+        },
+        {
+          "slug": "vue",
+          "title": "Vue 3",
+          "description": "Reactivity system internals, Composition API, computed/watch, components and slots, Pinia, Vue Router, Nuxt, compiler optimizations, Vue vs React.",
+          "level": "Advanced",
+          "tags": [
+            "vue3",
+            "composition-api",
+            "pinia"
+          ],
+          "minutes": 20,
+          "questions": 19,
+          "hot": 11
+        },
+        {
+          "slug": "angular",
+          "title": "Angular",
+          "description": "Standalone components, DI, change detection with Zone.js, OnPush and signals, RxJS operators, forms, routing, interceptors, control flow and defer.",
+          "level": "Advanced",
+          "tags": [
+            "angular",
+            "rxjs",
+            "signals"
+          ],
+          "minutes": 25,
+          "questions": 24,
+          "hot": 17
+        },
+        {
+          "slug": "react-native",
+          "title": "React Native",
+          "description": "New architecture (JSI, Fabric, TurboModules), Hermes, navigation, lists and performance, native modules, WebRTC on mobile.",
+          "level": "Advanced",
+          "tags": [
+            "mobile",
+            "jsi",
+            "hermes"
+          ],
+          "minutes": 10,
+          "questions": 15,
+          "hot": 7
+        }
+      ]
+    },
+    {
+      "id": "realtime",
+      "title": "Real-time, WebRTC & Desktop",
+      "icon": "🎥",
+      "description": "Your specialty at MeetHour: WebRTC, the Jitsi stack, Prosody/XMPP, Electron and WebSockets.",
+      "docs": [
+        {
+          "slug": "webrtc",
+          "title": "WebRTC In Depth",
+          "description": "Media capture, SDP offer/answer, ICE/STUN/TURN, DTLS-SRTP, codecs, simulcast and SVC, SFU vs MCU, bandwidth estimation, stats and debugging.",
+          "level": "Expert",
+          "tags": [
+            "sdp",
+            "ice",
+            "sfu",
+            "simulcast"
+          ],
+          "minutes": 25,
+          "questions": 22,
+          "hot": 15
+        },
+        {
+          "slug": "jitsi-prosody-xmpp",
+          "title": "Jitsi, Prosody & XMPP",
+          "description": "XMPP stanzas, MUC, Jingle, Colibri, Prosody configuration and Lua modules, JWT auth, Jicofo/JVB/Jibri/Jigasi, visitors and scaling.",
+          "level": "Expert",
+          "tags": [
+            "xmpp",
+            "prosody",
+            "jitsi",
+            "lua"
+          ],
+          "minutes": 20,
+          "questions": 17,
+          "hot": 11
+        },
+        {
+          "slug": "electron",
+          "title": "Electron Desktop Apps",
+          "description": "Process model, IPC, security hardening, screen capture, annotation overlays, PiP, local recording, auto-update, packaging and performance.",
+          "level": "Advanced",
+          "tags": [
+            "electron",
+            "ipc",
+            "desktop"
+          ],
+          "minutes": 15,
+          "questions": 13,
+          "hot": 7
+        },
+        {
+          "slug": "websockets-realtime",
+          "title": "WebSockets & Real-time Systems",
+          "description": "WebSocket protocol, Socket.IO, SSE vs long polling, reconnection, heartbeats, scaling with Redis pub/sub, presence and collaborative editing.",
+          "level": "Advanced",
+          "tags": [
+            "websocket",
+            "sse",
+            "scaling",
+            "crdt"
+          ],
+          "minutes": 15,
+          "questions": 12,
+          "hot": 8
+        }
+      ]
+    },
+    {
+      "id": "web",
+      "title": "Web Platform, Quality & Security",
+      "icon": "🌐",
+      "description": "HTML/CSS, how browsers work, security and auth (including Azure AD SSO), testing and frontend system design.",
+      "docs": [
+        {
+          "slug": "html-css-a11y",
+          "title": "HTML5, CSS3, SASS & Accessibility",
+          "description": "Semantics, specificity, cascade layers, box model, flexbox, grid, stacking contexts, responsive design, SASS, BEM and WCAG.",
+          "level": "Advanced",
+          "tags": [
+            "css",
+            "sass",
+            "a11y"
+          ],
+          "minutes": 25,
+          "questions": 24,
+          "hot": 19
+        },
+        {
+          "slug": "browser-internals",
+          "title": "Browser Internals & Networking",
+          "description": "What happens when you type a URL, the rendering pipeline, HTTP/1.1 vs 2 vs 3, caching, service workers, storage and workers.",
+          "level": "Advanced",
+          "tags": [
+            "rendering",
+            "http",
+            "caching"
+          ],
+          "minutes": 20,
+          "questions": 16,
+          "hot": 10
+        },
+        {
+          "slug": "web-security-auth",
+          "title": "Web Security & Authentication",
+          "description": "XSS, CSRF, CORS, CSP, clickjacking, JWT vs sessions, OAuth 2.0 + PKCE, OIDC, Azure AD/MSAL SSO and token storage.",
+          "level": "Advanced",
+          "tags": [
+            "security",
+            "oauth",
+            "sso"
+          ],
+          "minutes": 20,
+          "questions": 17,
+          "hot": 12
+        },
+        {
+          "slug": "testing",
+          "title": "Testing: Jest, RTL, Enzyme, Jasmine/Karma, E2E",
+          "description": "Test pyramid, React Testing Library, mocking, MSW, Enzyme and Jasmine/Karma (from the resume), Cypress and Playwright.",
+          "level": "Advanced",
+          "tags": [
+            "jest",
+            "rtl",
+            "e2e"
+          ],
+          "minutes": 20,
+          "questions": 18,
+          "hot": 10
+        },
+        {
+          "slug": "frontend-system-design",
+          "title": "Frontend System Design",
+          "description": "A framework for design rounds plus full designs: video-conferencing UI, collaborative editor, dashboard, document viewer, chat, autocomplete.",
+          "level": "Expert",
+          "tags": [
+            "system-design",
+            "architecture"
+          ],
+          "minutes": 20,
+          "questions": 16,
+          "hot": 12
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "title": "Backend, Languages & Cloud",
+      "icon": "🛠️",
+      "description": "Full-stack depth: Node.js, Java, Kotlin, Python, SQL/NoSQL, AWS (DVA-C02), Docker/CI-CD and LLM integration.",
+      "docs": [
+        {
+          "slug": "nodejs",
+          "title": "Node.js & Express",
+          "description": "Event loop phases, libuv, streams and backpressure, worker threads vs cluster, Express middleware, error handling, security and scaling.",
+          "level": "Advanced",
+          "tags": [
+            "node",
+            "express",
+            "streams"
+          ],
+          "minutes": 15,
+          "questions": 13,
+          "hot": 11
+        },
+        {
+          "slug": "java",
+          "title": "Java & Spring Boot",
+          "description": "OOP, JVM memory and GC, collections internals, equals/hashCode, concurrency and virtual threads, streams, records, Spring Boot and JPA.",
+          "level": "Advanced",
+          "tags": [
+            "java",
+            "jvm",
+            "spring"
+          ],
+          "minutes": 30,
+          "questions": 35,
+          "hot": 25
+        },
+        {
+          "slug": "kotlin",
+          "title": "Kotlin",
+          "description": "Null safety, data/sealed classes, extension and scope functions, inline/reified, coroutines and Flow, delegation, generics variance, Java interop.",
+          "level": "Advanced",
+          "tags": [
+            "kotlin",
+            "coroutines",
+            "flow"
+          ],
+          "minutes": 20,
+          "questions": 21,
+          "hot": 13
+        },
+        {
+          "slug": "python",
+          "title": "Python Essentials",
+          "description": "Data model, mutability, comprehensions, generators, decorators, context managers, GIL and concurrency, typing and common interview snippets.",
+          "level": "Core",
+          "tags": [
+            "python"
+          ],
+          "minutes": 15,
+          "questions": 18,
+          "hot": 10
+        },
+        {
+          "slug": "databases-sql",
+          "title": "Databases: PostgreSQL & DynamoDB",
+          "description": "SQL joins, indexes, EXPLAIN, transactions and isolation, window functions, normalization, JSONB, DynamoDB keys, GSIs and single-table design.",
+          "level": "Advanced",
+          "tags": [
+            "sql",
+            "postgres",
+            "dynamodb"
+          ],
+          "minutes": 25,
+          "questions": 21,
+          "hot": 14
+        },
+        {
+          "slug": "aws-serverless",
+          "title": "AWS & Serverless (DVA-C02)",
+          "description": "Lambda, API Gateway, DynamoDB, S3, Cognito, IAM, SQS/SNS/EventBridge, Step Functions, CloudFront, observability and deployment.",
+          "level": "Advanced",
+          "tags": [
+            "aws",
+            "lambda",
+            "serverless"
+          ],
+          "minutes": 20,
+          "questions": 16,
+          "hot": 15
+        },
+        {
+          "slug": "docker-devops",
+          "title": "Docker, Microservices, CI/CD & Git",
+          "description": "Images and layers, multi-stage builds, compose, networking, microservice patterns, Jenkins and GitHub Actions pipelines, Nginx, Git and Linux.",
+          "level": "Advanced",
+          "tags": [
+            "docker",
+            "ci-cd",
+            "git",
+            "linux"
+          ],
+          "minutes": 25,
+          "questions": 21,
+          "hot": 17
+        },
+        {
+          "slug": "ai-llm-integration",
+          "title": "LLM Integration (Claude API)",
+          "description": "How the RBF redaction pipeline used an LLM: structured outputs, chunking, prompt design, streaming, cost, privacy and evaluation.",
+          "level": "Advanced",
+          "tags": [
+            "llm",
+            "claude",
+            "ai"
+          ],
+          "minutes": 20,
+          "questions": 12,
+          "hot": 9
+        }
+      ]
+    },
+    {
+      "id": "dsa",
+      "title": "DSA (Practical Level)",
+      "icon": "🧮",
+      "description": "Not FAANG-grind level — the patterns and problems product companies actually ask, all in runnable JavaScript with tests.",
+      "docs": [
+        {
+          "slug": "dsa-foundations",
+          "title": "DSA Foundations & Patterns",
+          "description": "Big-O, arrays, hashing, two pointers, sliding window, prefix sums, stacks, queues, recursion, binary search and sorting — explained with code.",
+          "level": "Core",
+          "tags": [
+            "big-o",
+            "patterns",
+            "sorting"
+          ],
+          "minutes": 20,
+          "questions": 13,
+          "hot": 10
+        },
+        {
+          "slug": "dsa-arrays-strings",
+          "title": "Arrays, Strings & Hashing Problems",
+          "description": "Two Sum to Longest Substring: the 30 most-asked array/string problems with brute force → optimal solutions and tests.",
+          "level": "Core",
+          "tags": [
+            "arrays",
+            "strings",
+            "runnable"
+          ],
+          "minutes": 20,
+          "questions": 26,
+          "hot": 14
+        },
+        {
+          "slug": "dsa-linked-lists-stacks",
+          "title": "Linked Lists, Stacks, Queues & Heaps",
+          "description": "Reverse, merge, cycle detection, LRU, valid parentheses, monotonic stacks, min stack, priority queues and top-K.",
+          "level": "Core",
+          "tags": [
+            "linked-list",
+            "stack",
+            "heap"
+          ],
+          "minutes": 25,
+          "questions": 17,
+          "hot": 13
+        },
+        {
+          "slug": "dsa-trees-graphs",
+          "title": "Trees, Graphs & Recursion",
+          "description": "Traversals, depth, BST validation, LCA, level order, islands, BFS/DFS, topological sort, shortest paths and backtracking.",
+          "level": "Advanced",
+          "tags": [
+            "trees",
+            "graphs",
+            "bfs",
+            "dfs"
+          ],
+          "minutes": 25,
+          "questions": 16,
+          "hot": 10
+        },
+        {
+          "slug": "dsa-dp-greedy",
+          "title": "Dynamic Programming & Greedy (Essentials)",
+          "description": "How to recognise DP, memoization vs tabulation, and the classic easy/medium problems: climbing stairs to edit distance, plus greedy intervals.",
+          "level": "Advanced",
+          "tags": [
+            "dp",
+            "greedy"
+          ],
+          "minutes": 20,
+          "questions": 15,
+          "hot": 12
+        }
+      ]
+    }
+  ]
+}
