@@ -15,10 +15,10 @@ export const progressStore = createStore<ProgressState>(
 );
 
 export const progress = {
-  setStatus(key: string, s: QStatus | null) {
+  setStatus(key: string, s: QStatus | null, toggle = true) {
     progressStore.set((st) => {
       const status = { ...st.status };
-      if (s === null || status[key] === s) delete status[key];
+      if (s === null || (toggle && status[key] === s)) delete status[key];
       else status[key] = s;
       return { status };
     });
@@ -46,12 +46,28 @@ export const progress = {
     return JSON.stringify(progressStore.get(), null, 2);
   },
   importJson(json: string) {
-    const data = JSON.parse(json) as Partial<ProgressState>;
+    const data: unknown = JSON.parse(json);
+    const isMap = (value: unknown): value is Record<string, unknown> =>
+      typeof value === 'object' && value !== null && !Array.isArray(value);
+    if (!isMap(data) || !['status', 'bookmarks', 'notes', 'visited'].some((key) => key in data))
+      throw new Error('Invalid progress backup');
+    const validators: Record<keyof ProgressState, (value: unknown) => boolean> = {
+      status: (value) => value === 'mastered' || value === 'review',
+      bookmarks: (value) => typeof value === 'number' && Number.isFinite(value) && value >= 0,
+      notes: (value) => typeof value === 'string',
+      visited: (value) => typeof value === 'number' && Number.isFinite(value) && value >= 0,
+    };
+    for (const key of Object.keys(validators) as (keyof ProgressState)[]) {
+      const map = data[key];
+      if (map !== undefined && (!isMap(map) || !Object.values(map).every(validators[key])))
+        throw new Error('Invalid progress backup');
+    }
+    const imported = data as Partial<ProgressState>;
     progressStore.set({
-      status: data.status ?? {},
-      bookmarks: data.bookmarks ?? {},
-      notes: data.notes ?? {},
-      visited: data.visited ?? {},
+      status: imported.status ?? {},
+      bookmarks: imported.bookmarks ?? {},
+      notes: imported.notes ?? {},
+      visited: imported.visited ?? {},
     });
   },
   reset() {
@@ -59,6 +75,6 @@ export const progress = {
   },
 };
 
-export const useProgress = <S,>(selector: (s: ProgressState) => S) => useStore(progressStore, selector);
+export const useProgress = <S>(selector: (s: ProgressState) => S) => useStore(progressStore, selector);
 
 export const useStatusMap = () => useProgress((s) => s.status);

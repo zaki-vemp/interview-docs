@@ -251,10 +251,10 @@ export default function PlaygroundWindow({ hidden }: { hidden: boolean }) {
           <span className={`pg-status st-${status}`}>{statusLabel(status, ms)}</span>
         </span>
         <span className="pg-header-actions">
-          <button type="button" className="icon-btn" title={maximized ? 'Restore' : 'Maximize'} onClick={() => playgroundStore.set({ maximized: !maximized })}>
+          <button type="button" className="icon-btn" aria-label={maximized ? 'Restore playground size' : 'Maximize playground'} title={maximized ? 'Restore' : 'Maximize'} onClick={() => playgroundStore.set({ maximized: !maximized })}>
             {maximized ? '❐' : '□'}
           </button>
-          <button type="button" className="icon-btn" title="Hide (Ctrl + `). Your code is kept." onClick={playground.close}>
+          <button type="button" className="icon-btn" aria-label="Hide playground" title="Hide (Ctrl + `). Your code is kept." onClick={playground.close}>
             ✕
           </button>
         </span>
@@ -262,10 +262,10 @@ export default function PlaygroundWindow({ hidden }: { hidden: boolean }) {
 
       <div className="pg-toolbar">
         <div className="seg" role="group" aria-label="Language">
-          <button type="button" className={lang === 'js' ? 'on' : ''} onClick={() => setLang('js')}>
+          <button type="button" className={lang === 'js' ? 'on' : ''} aria-pressed={lang === 'js'} onClick={() => setLang('js')}>
             JS
           </button>
-          <button type="button" className={lang === 'ts' ? 'on' : ''} onClick={() => setLang('ts')}>
+          <button type="button" className={lang === 'ts' ? 'on' : ''} aria-pressed={lang === 'ts'} onClick={() => setLang('ts')}>
             TS
           </button>
         </div>

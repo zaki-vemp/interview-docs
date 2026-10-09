@@ -77,36 +77,82 @@ export function SearchPage() {
       if (!ok) continue;
       if (item.titleLc.includes(terms.join(' '))) score += 15;
       if (item.q.hot) score += 2;
-      const pos = Math.max(0, ...terms.map((t) => textLc.indexOf(t)).filter((p) => p >= 0).slice(0, 1));
+      const pos = Math.max(
+        0,
+        ...terms
+          .map((t) => textLc.indexOf(t))
+          .filter((p) => p >= 0)
+          .slice(0, 1),
+      );
       const start = Math.max(0, pos - 70);
-      const snippet = (start > 0 ? '… ' : '') + item.text.slice(start, start + 220) + (item.text.length > start + 220 ? ' …' : '');
-      out.push({ slug: item.slug, docTitle: item.docTitle, category: item.category, qid: item.q.id, title: item.q.title, hot: item.q.hot, score, snippet });
+      const snippet =
+        (start > 0 ? '… ' : '') +
+        item.text.slice(start, start + 220) +
+        (item.text.length > start + 220 ? ' …' : '');
+      out.push({
+        slug: item.slug,
+        docTitle: item.docTitle,
+        category: item.category,
+        qid: item.q.id,
+        title: item.q.title,
+        hot: item.q.hot,
+        score,
+        snippet,
+      });
     }
     return out.sort((a, b) => b.score - a.score).slice(0, 150);
   }, [index, terms]);
 
   return (
     <div className="page narrow">
-      <h1>Search</h1>
-      <p className="muted">
-        {isLoading
-          ? 'Loading every document into the SWR cache…'
+      <p className="eyebrow">Across your library</p>
+      <h1>Find an answer.</h1>
+      <p className="muted" role="status">
+        {isLoading || !docs
+          ? 'Preparing your question library…'
           : error
             ? 'Some documents could not be loaded.'
-            : `Searching ${index.length} questions across ${docs?.length ?? 0} documents.`}
+            : `Search ${index.length} questions across ${docs?.length ?? 0} topics.`}
       </p>
-      {!terms.length && !isLoading && <p className="empty-state">Type in the search box above (Ctrl K). Every word must match, titles rank higher.</p>}
+      {!terms.length && !isLoading && (
+        <div className="empty-state">
+          <h2>What would you like to work on?</h2>
+          <p>Use the search above, or start with a familiar topic.</p>
+          <div className="chips search-suggestions">
+            {['React', 'Closures', 'WebRTC'].map((term) => (
+              <Link key={term} className="btn-ghost btn-sm" to={`/search?q=${term}`}>
+                {term}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
       {terms.length > 0 && !isLoading && (
         <p className="muted small">
-          {hits.length} result{hits.length === 1 ? '' : 's'} for “{deferred}”
+          {hits.length === 150
+            ? 'Showing the first 150 results'
+            : `${hits.length} result${hits.length === 1 ? '' : 's'}`}{' '}
+          for “{deferred}”
         </p>
+      )}
+      {terms.length > 0 && docs && !isLoading && hits.length === 0 && (
+        <div className="empty-state">
+          <h2>Let’s try a different phrase.</h2>
+          <p>
+            Try a shorter search or a broader topic. Each word needs to appear in the question, answer, or
+            topic title.
+          </p>
+          <Link to="/topics" className="btn-ghost">
+            Browse topics
+          </Link>
+        </div>
       )}
       <ol className="search-results">
         {hits.map((h) => (
           <li key={`${h.slug}/${h.qid}`}>
             <Link to={`/docs/${h.slug}#q-${h.qid}`} className="hit">
               <span className="hit-meta">
-                {h.category} › {h.docTitle} {h.hot && <span className="badge hot">🔥</span>}
+                {h.category} › {h.docTitle} {h.hot && <span className="badge hot">Frequently asked</span>}
               </span>
               <span className="hit-title">{highlight(h.title, terms)}</span>
               <span className="hit-snippet">{highlight(h.snippet, terms)}</span>

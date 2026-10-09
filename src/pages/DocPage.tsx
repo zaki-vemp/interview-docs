@@ -3,6 +3,7 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 import { prefetchDoc, useDoc, useFlatDocs, useManifest } from '../hooks/useResources';
 import { Markdown } from '../components/Markdown';
 import { QuestionCard } from '../components/QuestionCard';
+import { Icon } from '../components/Icon';
 import { progress, useStatusMap } from '../lib/progress';
 import type { ParsedQuestion } from '../lib/types';
 
@@ -10,10 +11,10 @@ type Filter = 'all' | 'hot' | 'todo' | 'review' | 'mastered';
 
 const FILTERS: { id: Filter; label: string }[] = [
   { id: 'all', label: 'All' },
-  { id: 'hot', label: '🔥 Hot' },
-  { id: 'todo', label: 'Not mastered' },
-  { id: 'review', label: '↻ Review' },
-  { id: 'mastered', label: '✓ Mastered' },
+  { id: 'hot', label: 'Frequently asked' },
+  { id: 'todo', label: 'To learn' },
+  { id: 'review', label: 'Review' },
+  { id: 'mastered', label: 'Mastered' },
 ];
 
 export function DocPage() {
@@ -41,6 +42,12 @@ export function DocPage() {
     setQuery('');
   }, [slug]);
 
+  useEffect(() => {
+    if (doc?.slug === slug && doc.questions[0] && !location.hash.startsWith('#q-')) {
+      setOpenIds(new Set([doc.questions[0].id]));
+    }
+  }, [doc, slug]);
+
   // Deep links: /docs/x#q-some-question opens and scrolls to that question
   useEffect(() => {
     if (!doc || !location.hash.startsWith('#q-')) return;
@@ -58,7 +65,8 @@ export function DocPage() {
       if (filter === 'review' && st !== 'review') return false;
       if (filter === 'mastered' && st !== 'mastered') return false;
       const needle = deferredQuery.trim().toLowerCase();
-      if (needle && !q.title.toLowerCase().includes(needle) && !q.body.toLowerCase().includes(needle)) return false;
+      if (needle && !q.title.toLowerCase().includes(needle) && !q.body.toLowerCase().includes(needle))
+        return false;
       return true;
     },
     [filter, deferredQuery, status],
@@ -95,7 +103,7 @@ export function DocPage() {
           <p>
             <code>{slug}</code> could not be loaded ({String(error.message ?? error)}).
           </p>
-          <Link to="/">← Back to the dashboard</Link>
+          <Link to="/topics">Back to your topics</Link>
         </div>
       </div>
     );
@@ -122,8 +130,11 @@ export function DocPage() {
   return (
     <div className="page doc-page">
       <div className="doc-main">
-        <nav className="crumbs">
-          <Link to="/">Dashboard</Link> <span>/</span> <span>{meta?.category.title ?? 'Docs'}</span>
+        <nav className="crumbs" aria-label="Breadcrumb">
+          <Link to="/topics">Topics</Link> <span>/</span>{' '}
+          <Link to={meta ? `/topics?category=${meta.category.id}` : '/topics'}>
+            {meta?.category.title ?? 'Library'}
+          </Link>
         </nav>
         <header className="doc-header">
           <h1>{meta?.title ?? doc.title}</h1>
@@ -131,7 +142,7 @@ export function DocPage() {
           <div className="doc-meta">
             {meta && <span className={`badge lvl-${meta.level.toLowerCase()}`}>{meta.level}</span>}
             <span className="badge">{total} questions</span>
-            {hotCount > 0 && <span className="badge hot">🔥 {hotCount} hot</span>}
+            {hotCount > 0 && <span className="badge hot">{hotCount} frequently asked</span>}
             <span className="badge">≈ {Math.max(1, Math.round(doc.words / 200))} min read</span>
             {meta?.tags.map((t) => (
               <span key={t} className="tag">
@@ -145,6 +156,9 @@ export function DocPage() {
           <p className="muted small">
             {mastered} / {total} mastered
           </p>
+          <Link className="text-link" to={`/practice?topic=${slug}`}>
+            <Icon name="play" /> Practice this topic
+          </Link>
         </header>
 
         {doc.intro && (
@@ -163,17 +177,41 @@ export function DocPage() {
           />
           <div className="chips" role="group" aria-label="Filter">
             {FILTERS.map((f) => (
-              <button key={f.id} type="button" className={`chip-btn${filter === f.id ? ' on' : ''}`} onClick={() => setFilter(f.id)}>
+              <button
+                key={f.id}
+                type="button"
+                className={`chip-btn${filter === f.id ? ' on' : ''}`}
+                aria-pressed={filter === f.id}
+                onClick={() => setFilter(f.id)}
+              >
                 {f.label}
               </button>
             ))}
           </div>
-          <button type="button" className="btn-ghost btn-sm" onClick={() => setOpenIds(allOpen ? new Set() : new Set(allVisibleIds))}>
+          <button
+            type="button"
+            className="btn-ghost btn-sm"
+            onClick={() => setOpenIds(allOpen ? new Set() : new Set(allVisibleIds))}
+          >
             {allOpen ? 'Collapse all' : 'Expand all'}
           </button>
         </div>
 
-        {visibleSections.length === 0 && <p className="empty-state">No questions match this filter.</p>}
+        {visibleSections.length === 0 && (
+          <div className="empty-state">
+            <p>No questions match your filters.</p>
+            <button
+              className="btn-ghost"
+              type="button"
+              onClick={() => {
+                setFilter('all');
+                setQuery('');
+              }}
+            >
+              Clear filters
+            </button>
+          </div>
+        )}
 
         {visibleSections.map((s) => (
           <section key={s.id} id={s.id} className="doc-section">
@@ -191,7 +229,11 @@ export function DocPage() {
 
         <nav className="pager">
           {prev ? (
-            <Link to={`/docs/${prev.slug}`} className="pager-link" onMouseEnter={() => prefetchDoc(prev.slug)}>
+            <Link
+              to={`/docs/${prev.slug}`}
+              className="pager-link"
+              onMouseEnter={() => prefetchDoc(prev.slug)}
+            >
               <small>← Previous</small>
               {prev.title}
             </Link>
@@ -199,7 +241,11 @@ export function DocPage() {
             <span />
           )}
           {next ? (
-            <Link to={`/docs/${next.slug}`} className="pager-link next" onMouseEnter={() => prefetchDoc(next.slug)}>
+            <Link
+              to={`/docs/${next.slug}`}
+              className="pager-link next"
+              onMouseEnter={() => prefetchDoc(next.slug)}
+            >
               <small>Next →</small>
               {next.title}
             </Link>

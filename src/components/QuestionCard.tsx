@@ -1,5 +1,6 @@
 import { memo, useState } from 'react';
 import { Markdown } from './Markdown';
+import { Icon } from './Icon';
 import { progress, useProgress } from '../lib/progress';
 import type { ParsedQuestion } from '../lib/types';
 
@@ -19,66 +20,84 @@ export const QuestionCard = memo(function QuestionCard({ q, index, open, onToggl
   return (
     <article id={`q-${q.id}`} className={`qcard${open ? ' open' : ''}${status ? ` st-${status}` : ''}`}>
       <header className="qcard-head">
-        <button type="button" className="qcard-toggle" onClick={() => onToggle(q.id)} aria-expanded={open}>
+        <button
+          type="button"
+          className="qcard-toggle"
+          onClick={() => onToggle(q.id)}
+          aria-expanded={open}
+          aria-controls={`answer-${q.id}`}
+        >
           <span className="qcard-num">{index}</span>
           <span className="qcard-title">{q.title}</span>
-          {q.hot && (
-            <span className="badge hot" title="Frequently asked">
-              🔥 hot
+          {status && (
+            <span className={`question-status ${status}`}>
+              {status === 'mastered' ? 'Mastered' : 'Review'}
             </span>
           )}
-          <span className="qcard-chevron" aria-hidden>
-            {open ? '−' : '+'}
-          </span>
+          <Icon name="chevron" className={`qcard-chevron${open ? ' expanded' : ''}`} />
         </button>
-        <div className="qcard-actions">
-          <button
-            type="button"
-            className={`pill ${status === 'mastered' ? 'on-good' : ''}`}
-            onClick={() => progress.setStatus(q.key, 'mastered')}
-            title="I can answer this confidently"
-          >
-            ✓ Mastered
-          </button>
-          <button
-            type="button"
-            className={`pill ${status === 'review' ? 'on-warn' : ''}`}
-            onClick={() => progress.setStatus(q.key, 'review')}
-            title="Revisit before the interview"
-          >
-            ↻ Review
-          </button>
-          <button type="button" className={`pill ${bookmarked ? 'on-accent' : ''}`} onClick={() => progress.toggleBookmark(q.key)} title="Bookmark">
-            {bookmarked ? '★' : '☆'}
-          </button>
-          <a className="pill" href={`#q-${q.id}`} title="Link to this question">
-            #
-          </a>
-        </div>
+        <button
+          type="button"
+          className="icon-btn bookmark-toggle"
+          onClick={() => progress.toggleBookmark(q.key)}
+          aria-label={`Bookmark: ${q.title}`}
+          aria-pressed={bookmarked}
+          title={bookmarked ? 'Remove bookmark' : 'Bookmark question'}
+        >
+          <Icon name="bookmark" />
+        </button>
       </header>
-      {open && (
-        <div className="qcard-body">
-          <Markdown>{q.body}</Markdown>
-          <div className="qcard-notes">
-            {showNote || note ? (
-              <>
-                <label htmlFor={`note-${q.id}`}>My notes — add your own project examples, numbers and phrasing</label>
-                <textarea
-                  id={`note-${q.id}`}
-                  value={note}
-                  rows={Math.min(10, Math.max(3, note.split('\n').length + 1))}
-                  placeholder="e.g. In MeetHour we measured…"
-                  onChange={(e) => progress.setNote(q.key, e.target.value)}
-                />
-              </>
-            ) : (
-              <button type="button" className="btn-ghost btn-xs" onClick={() => setShowNote(true)}>
-                ✎ Add my notes
+      <div id={`answer-${q.id}`} hidden={!open}>
+        {open && (
+          <div className="qcard-body">
+            <div className="question-content">
+              <Markdown>{q.body}</Markdown>
+            </div>
+            <div className="question-footer">
+              <button
+                type="button"
+                className="btn-ghost"
+                onClick={() => progress.setStatus(q.key, 'mastered')}
+                aria-pressed={status === 'mastered'}
+                title="I can answer this confidently"
+              >
+                <Icon name="check" /> Mastered
               </button>
-            )}
+              <button
+                type="button"
+                className="btn-ghost"
+                onClick={() => progress.setStatus(q.key, 'review')}
+                aria-pressed={status === 'review'}
+                title="Revisit before the interview"
+              >
+                <Icon name="review" /> Review
+              </button>
+              {q.hot && <span className="badge hot">Frequently asked</span>}
+              <a className="text-link question-link" href={`#q-${q.id}`} aria-label={`Link to: ${q.title}`}>
+                <Icon name="link" /> Question link
+              </a>
+            </div>
+            <div className="qcard-notes">
+              {showNote || note ? (
+                <>
+                  <label htmlFor={`note-${q.id}`}>Your notes · saved as you type</label>
+                  <textarea
+                    id={`note-${q.id}`}
+                    value={note}
+                    rows={Math.min(10, Math.max(3, note.split('\n').length + 1))}
+                    placeholder="Add a project example, a useful number, or a way to explain this in your own words…"
+                    onChange={(e) => progress.setNote(q.key, e.target.value)}
+                  />
+                </>
+              ) : (
+                <button type="button" className="btn-ghost btn-xs" onClick={() => setShowNote(true)}>
+                  Add your own notes
+                </button>
+              )}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </article>
   );
 });
