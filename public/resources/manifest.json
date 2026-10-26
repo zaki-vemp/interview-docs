@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "categories": [
     {
       "id": "profile",
@@ -543,6 +543,240 @@
           "minutes": 20,
           "questions": 12,
           "hot": 9
+        }
+      ]
+    },
+    {
+      "id": "databases",
+      "title": "Databases: SQL & NoSQL Deep Dive",
+      "icon": "🗄️",
+      "description": "SQL from joins to window functions, indexing and query plans, transactions and locking, schema design, MongoDB, Redis and caching, and distributed data.",
+      "docs": [
+        {
+          "slug": "sql-mastery",
+          "title": "SQL Mastery: Queries, Joins & Window Functions",
+          "description": "Logical query order, NULL logic, every join type, semi/anti/LATERAL joins, fan-out, GROUP BY and pivots, CTEs and recursion, window frames, gaps-and-islands, and 20+ classic interview queries.",
+          "level": "Advanced",
+          "tags": [
+            "sql",
+            "joins",
+            "window-functions",
+            "postgres"
+          ],
+          "minutes": 30,
+          "questions": 0,
+          "hot": 0
+        },
+        {
+          "slug": "db-indexing-performance",
+          "title": "Indexing, Query Plans & Performance Tuning",
+          "description": "B-tree internals, index types, composite and covering indexes, sargability, EXPLAIN ANALYZE, join algorithms, keyset pagination, partitioning, connection pooling, locks, VACUUM and monitoring.",
+          "level": "Expert",
+          "tags": [
+            "indexes",
+            "explain",
+            "performance",
+            "postgres"
+          ],
+          "minutes": 30,
+          "questions": 0,
+          "hot": 0
+        },
+        {
+          "slug": "db-transactions-locking",
+          "title": "Transactions, Isolation & Locking",
+          "description": "ACID internals, every anomaly with timelines, Postgres vs MySQL isolation, MVCC, write skew, SERIALIZABLE retries, lost updates, deadlocks, gap locks, idempotency keys, sagas and the outbox.",
+          "level": "Expert",
+          "tags": [
+            "acid",
+            "isolation",
+            "mvcc",
+            "locking",
+            "saga"
+          ],
+          "minutes": 30,
+          "questions": 0,
+          "hot": 0
+        },
+        {
+          "slug": "db-schema-design",
+          "title": "Schema Design, Normalization & Migrations",
+          "description": "Normal forms worked through, keys and types, trees, polymorphism, soft delete, multi-tenancy with RLS, ledgers, time zones, ordered lists, five schema case studies, zero-downtime migrations and backups.",
+          "level": "Advanced",
+          "tags": [
+            "modeling",
+            "normalization",
+            "migrations",
+            "multi-tenancy"
+          ],
+          "minutes": 30,
+          "questions": 0,
+          "hot": 0
+        },
+        {
+          "slug": "nosql-mongodb",
+          "title": "NoSQL Fundamentals & MongoDB",
+          "description": "NoSQL families, BASE, MongoDB modelling patterns, CRUD and aggregation, ESR indexes, explain, replica sets, sharding, change streams, Mongoose, NoSQL injection, Cassandra, Elasticsearch and graph DBs.",
+          "level": "Advanced",
+          "tags": [
+            "nosql",
+            "mongodb",
+            "cassandra",
+            "elasticsearch"
+          ],
+          "minutes": 30,
+          "questions": 0,
+          "hot": 0
+        },
+        {
+          "slug": "redis-caching",
+          "title": "Redis & Caching Strategies",
+          "description": "Redis internals, data structures, persistence, eviction, cluster, caching patterns, invalidation races, stampedes, penetration/avalanche, HTTP caching, LFU, rate limiters, distributed locks, leaderboards, presence.",
+          "level": "Advanced",
+          "tags": [
+            "redis",
+            "caching",
+            "rate-limiting",
+            "locks"
+          ],
+          "minutes": 30,
+          "questions": 0,
+          "hot": 0
+        },
+        {
+          "slug": "distributed-data",
+          "title": "Replication, Sharding & Distributed Databases",
+          "description": "CAP and PACELC, consistency models, quorums, vector clocks, CRDTs, Raft, replication lag and failover, sharding strategies, consistent hashing, B-tree vs LSM, CQRS, event sourcing, multi-region, DynamoDB internals.",
+          "level": "Expert",
+          "tags": [
+            "cap",
+            "replication",
+            "sharding",
+            "consensus",
+            "lsm"
+          ],
+          "minutes": 30,
+          "questions": 0,
+          "hot": 0
+        }
+      ]
+    },
+    {
+      "id": "backend-deep",
+      "title": "Backend Deep Dives",
+      "icon": "⚙️",
+      "description": "Node.js internals and production, API design, Java/JVM, Spring Boot and Hibernate, Kotlin coroutines, Python back ends, and backend system design.",
+      "docs": [
+        {
+          "slug": "nodejs-internals",
+          "title": "Node.js Internals Deep Dive",
+          "description": "V8 JIT tiers, hidden classes, GC and leaks, libuv thread pool, exact callback ordering, CommonJS/ESM internals, Buffers, streams, EventEmitter, worker threads, child processes, AsyncLocalStorage, diagnostics, keep-alive 502s, prototype pollution, Node 20–24.",
+          "level": "Expert",
+          "tags": [
+            "v8",
+            "libuv",
+            "event-loop",
+            "modules",
+            "streams"
+          ],
+          "minutes": 30,
+          "questions": 0,
+          "hot": 0
+        },
+        {
+          "slug": "nodejs-production",
+          "title": "Node.js in Production: NestJS, Data, Jobs & Observability",
+          "description": "Project structure and DI, config and validation, NestJS lifecycle and scopes, ORMs and pooling, background jobs, uploads, SSE streaming, retries and circuit breakers, graceful shutdown, probes, logging, metrics, tracing, testing, Docker, Lambda, TypeScript setup.",
+          "level": "Advanced",
+          "tags": [
+            "nestjs",
+            "orm",
+            "jobs",
+            "observability",
+            "kubernetes"
+          ],
+          "minutes": 30,
+          "questions": 0,
+          "hot": 0
+        },
+        {
+          "slug": "api-design",
+          "title": "API Design: REST, GraphQL, gRPC & Webhooks",
+          "description": "REST constraints, URL and action design, PUT vs PATCH, status codes, Problem Details errors, pagination and filtering, versioning, ETags, long-running operations, files and ranges, auth options, OpenAPI, GraphQL with DataLoader, gRPC and Protobuf, webhooks, gateways and BFF.",
+          "level": "Advanced",
+          "tags": [
+            "rest",
+            "graphql",
+            "grpc",
+            "webhooks",
+            "openapi"
+          ],
+          "minutes": 30,
+          "questions": 0,
+          "hot": 0
+        },
+        {
+          "slug": "java-deep-dive",
+          "title": "Java Deep Dive: JVM, Memory Model & Concurrency",
+          "description": "Class loading, bytecode and invokedynamic, JIT and escape analysis, memory layout, GC mechanics, containers and OOMKills, production diagnosis, happens-before, monitors, locks, CAS, thread pools, CompletableFuture, virtual threads, generics, sealed types, streams, JDK 22–25.",
+          "level": "Expert",
+          "tags": [
+            "jvm",
+            "gc",
+            "jmm",
+            "concurrency",
+            "java25"
+          ],
+          "minutes": 30,
+          "questions": 0,
+          "hot": 0
+        },
+        {
+          "slug": "spring-boot-deep-dive",
+          "title": "Spring Boot, Spring Security & Hibernate Deep Dive",
+          "description": "Container startup and bean lifecycle, DI and scopes, AOP proxies, events, auto-configuration, config binding, MVC pipeline, ProblemDetail, WebFlux vs virtual threads, Actuator, Boot 3/4, HTTP clients and Resilience4j, Security filter chain, JWT resource server, OIDC/BFF, persistence context, fetching, mapping, locking, propagation, testing.",
+          "level": "Expert",
+          "tags": [
+            "spring",
+            "security",
+            "hibernate",
+            "jpa",
+            "transactions"
+          ],
+          "minutes": 30,
+          "questions": 0,
+          "hot": 0
+        },
+        {
+          "slug": "kotlin-deep-dive",
+          "title": "Kotlin Deep Dive: Coroutines, Flow & Backend Kotlin",
+          "description": "Suspend as a CPS state machine, contexts and dispatchers, structured concurrency, cancellation and exceptions, Mutex and channels, Flow operators, StateFlow/SharedFlow, callbackFlow, virtual-time testing, type system, value classes, delegation, DSLs, K2, Spring + Kotlin, Ktor, Exposed, serialization, interop.",
+          "level": "Expert",
+          "tags": [
+            "coroutines",
+            "flow",
+            "ktor",
+            "spring-kotlin"
+          ],
+          "minutes": 30,
+          "questions": 0,
+          "hot": 0
+        },
+        {
+          "slug": "python-backend",
+          "title": "Python Backend Deep Dive: Internals, asyncio, Django & FastAPI",
+          "description": "CPython bytecode and the adaptive interpreter, object model and descriptors, MRO, metaclasses, memory and GC, GIL and free-threading, asyncio internals and TaskGroup, blocking traps, WSGI/ASGI, Django ORM and DRF, FastAPI and Pydantic v2, SQLAlchemy 2.0, Celery, typing, pytest, packaging, profiling, security.",
+          "level": "Advanced",
+          "tags": [
+            "python",
+            "asyncio",
+            "django",
+            "fastapi",
+            "celery"
+          ],
+          "minutes": 30,
+          "questions": 0,
+          "hot": 0
         }
       ]
     },

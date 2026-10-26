@@ -6,6 +6,8 @@ import { common } from 'lowlight';
 import dockerfile from 'highlight.js/lib/languages/dockerfile';
 import nginx from 'highlight.js/lib/languages/nginx';
 import groovy from 'highlight.js/lib/languages/groovy';
+import protobuf from 'highlight.js/lib/languages/protobuf';
+import http from 'highlight.js/lib/languages/http';
 import { Link } from 'react-router-dom';
 import { playground, type PgLang } from '../lib/playgroundStore';
 
@@ -15,6 +17,8 @@ const LABEL: Record<string, string> = {
   node: 'Node.js', tstype: 'TypeScript · types only', tslib: 'TypeScript', java: 'Java', kotlin: 'Kotlin', kt: 'Kotlin', python: 'Python', py: 'Python', sql: 'SQL', bash: 'Shell',
   sh: 'Shell', json: 'JSON', yaml: 'YAML', yml: 'YAML', lua: 'Lua', html: 'HTML', xml: 'XML', css: 'CSS', scss: 'SCSS',
   dockerfile: 'Dockerfile', nginx: 'Nginx', text: 'Text', vue: 'Vue SFC', groovy: 'Groovy', diff: 'Diff', graphql: 'GraphQL',
+  protobuf: 'Protobuf', proto: 'Protobuf', http: 'HTTP', mongo: 'MongoDB shell', redis: 'Redis CLI', cql: 'CQL (Cassandra)',
+  properties: 'Properties', toml: 'TOML', ini: 'INI', plsql: 'PL/pgSQL', cypher: 'Cypher (Neo4j)', esquery: 'Elasticsearch query',
 };
 
 type HastNode = { type: string; value?: string; tagName?: string; properties?: { className?: unknown }; children?: HastNode[] };
@@ -83,7 +87,13 @@ const components: Components = {
 };
 
 const rehypePlugins: Parameters<typeof ReactMarkdown>[0]['rehypePlugins'] = [
-  [rehypeHighlight, { languages: { ...common, dockerfile, nginx, groovy }, aliases: { javascript: ['node'], typescript: ['tstype', 'tslib'], xml: ['vue'] } }],
+  [
+    rehypeHighlight,
+    {
+      languages: { ...common, dockerfile, nginx, groovy, protobuf, http },
+      aliases: { javascript: ['node', 'mongo'], typescript: ['tstype', 'tslib'], xml: ['vue'], protobuf: ['proto'], sql: ['cql', 'plsql'], ini: ['properties', 'toml'], plaintext: ['redis', 'cypher'], json: ['esquery'] },
+    },
+  ],
 ];
 const remarkPlugins = [remarkGfm];
 
