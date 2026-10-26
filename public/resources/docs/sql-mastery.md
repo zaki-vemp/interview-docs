@@ -2,7 +2,7 @@
 
 Your resume lists **PostgreSQL**, and the LoadOTR dashboard and the ScaleCapacity back ends are the kind of systems where SQL questions come from. Full-stack interviews almost always include a **live SQL round**. The interviewer shares a schema and asks for queries of increasing difficulty: joins, aggregates, "top N per group", "consecutive days", "running totals", "find duplicates". Then they probe whether you understand **why** the query works: NULL semantics, join cardinality, window frames.
 
-This doc goes deeper than [Databases: PostgreSQL & DynamoDB](/docs/databases-sql). Every query here is **PostgreSQL** unless stated otherwise, and where MySQL differs, it says so.
+This doc goes deeper than [Databases: PostgreSQL & DynamoDB](/docs/databases-sql). New to SQL or want a ground-up refresher first? Start with [SQL Fundamentals (Fresher → Interview-Ready)](/docs/sql-fundamentals), then pair this guide with [PostgreSQL Deep Dive](/docs/postgresql-deep-dive), [MySQL & InnoDB Deep Dive](/docs/mysql-deep-dive), and [SQL Scalability & Query Efficiency](/docs/sql-scalability-efficiency). Every query here is **PostgreSQL** unless stated otherwise, and where MySQL differs, it says so.
 
 > SQL isn't runnable in the playground. Each query lists its expected result. The trickier semantics (three-valued logic, ranking functions, gaps-and-islands, window frames) are reproduced in **runnable JavaScript with tests**, so you can experiment with them.
 

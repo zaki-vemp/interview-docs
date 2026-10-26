@@ -14,7 +14,7 @@ import { playground, type PgLang } from '../lib/playgroundStore';
 const RUNNABLE: Record<string, PgLang> = { js: 'js', javascript: 'js', ts: 'ts', typescript: 'ts' };
 const LABEL: Record<string, string> = {
   js: 'JavaScript', javascript: 'JavaScript', ts: 'TypeScript', typescript: 'TypeScript', jsx: 'JSX', tsx: 'TSX',
-  node: 'Node.js', tstype: 'TypeScript · types only', tslib: 'TypeScript', java: 'Java', kotlin: 'Kotlin', kt: 'Kotlin', python: 'Python', py: 'Python', sql: 'SQL', bash: 'Shell',
+  node: 'Node.js', tstype: 'TypeScript · types only', tslib: 'TypeScript', java: 'Java', kotlin: 'Kotlin', kt: 'Kotlin', python: 'Python', py: 'Python', sql: 'SQL', pgsql: 'PostgreSQL', postgres: 'PostgreSQL', postgresql: 'PostgreSQL', mysql: 'MySQL', bash: 'Shell',
   sh: 'Shell', json: 'JSON', yaml: 'YAML', yml: 'YAML', lua: 'Lua', html: 'HTML', xml: 'XML', css: 'CSS', scss: 'SCSS',
   dockerfile: 'Dockerfile', nginx: 'Nginx', text: 'Text', vue: 'Vue SFC', groovy: 'Groovy', diff: 'Diff', graphql: 'GraphQL',
   protobuf: 'Protobuf', proto: 'Protobuf', http: 'HTTP', mongo: 'MongoDB shell', redis: 'Redis CLI', cql: 'CQL (Cassandra)',
@@ -91,7 +91,7 @@ const rehypePlugins: Parameters<typeof ReactMarkdown>[0]['rehypePlugins'] = [
     rehypeHighlight,
     {
       languages: { ...common, dockerfile, nginx, groovy, protobuf, http },
-      aliases: { javascript: ['node', 'mongo'], typescript: ['tstype', 'tslib'], xml: ['vue'], protobuf: ['proto'], sql: ['cql', 'plsql'], ini: ['properties', 'toml'], plaintext: ['redis', 'cypher'], json: ['esquery'] },
+      aliases: { javascript: ['node', 'mongo'], typescript: ['tstype', 'tslib'], xml: ['vue'], protobuf: ['proto'], sql: ['cql', 'plsql', 'pgsql', 'postgres', 'postgresql', 'mysql'], ini: ['properties', 'toml'], plaintext: ['redis', 'cypher'], json: ['esquery'] },
     },
   ],
 ];

@@ -86,6 +86,13 @@ const paths = {
       <path d="M6 7v10m12-10a10 10 0 0 1-10 10" />
     </>
   ),
+  database: (
+    <>
+      <ellipse cx="12" cy="5" rx="8" ry="3" />
+      <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5" />
+      <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
+    </>
+  ),
   link: (
     <>
       <path
@@ -122,6 +129,8 @@ const categories: Record<string, IconName> = {
   realtime: 'radio',
   web: 'globe',
   backend: 'cloud',
+  databases: 'database',
+  'backend-deep': 'settings',
   dsa: 'branch',
 };
 export const categoryIcon = (id: string): IconName => categories[id] ?? 'book';

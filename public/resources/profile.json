@@ -46,10 +46,11 @@
     { "day": "Day 5", "focus": "Real-time specialty: WebRTC, Jitsi/Prosody, Electron, WebSockets.", "docs": ["webrtc", "jitsi-prosody-xmpp", "electron", "websockets-realtime"] },
     { "day": "Day 6", "focus": "Other frameworks: Next.js, Vue, Angular, React Native.", "docs": ["nextjs", "vue", "angular", "react-native"] },
     { "day": "Day 7", "focus": "Web platform: browser internals, CSS, security/auth, testing.", "docs": ["browser-internals", "html-css-a11y", "web-security-auth", "testing"] },
-    { "day": "Day 8", "focus": "Full stack: Node.js, databases, AWS, Docker/CI-CD.", "docs": ["nodejs", "databases-sql", "aws-serverless", "docker-devops"] },
-    { "day": "Day 9", "focus": "JVM languages and Python.", "docs": ["java", "kotlin", "python"] },
-    { "day": "Day 10", "focus": "DSA practice — solve before reading the solutions.", "docs": ["dsa-foundations", "dsa-arrays-strings", "dsa-linked-lists-stacks"] },
-    { "day": "Day 11", "focus": "More DSA, then system design.", "docs": ["dsa-trees-graphs", "dsa-dp-greedy", "frontend-system-design"] },
-    { "day": "Day 12", "focus": "Behavioural stories, LLM integration, cheat sheet, and a full mock interview.", "docs": ["behavioral-hr", "ai-llm-integration", "last-day-cheatsheet"] }
+    { "day": "Day 8", "focus": "Full stack: Node.js, SQL fundamentals, AWS, Docker/CI-CD.", "docs": ["nodejs", "sql-fundamentals", "databases-sql", "aws-serverless", "docker-devops"] },
+    { "day": "Day 9", "focus": "SQL Mastery, PostgreSQL & MySQL internals, scalability & efficiency.", "docs": ["sql-mastery", "postgresql-deep-dive", "mysql-deep-dive", "sql-scalability-efficiency", "db-indexing-performance", "db-transactions-locking"] },
+    { "day": "Day 10", "focus": "JVM languages and Python.", "docs": ["java", "kotlin", "python"] },
+    { "day": "Day 11", "focus": "DSA practice — solve before reading the solutions.", "docs": ["dsa-foundations", "dsa-arrays-strings", "dsa-linked-lists-stacks"] },
+    { "day": "Day 12", "focus": "More DSA, then system design.", "docs": ["dsa-trees-graphs", "dsa-dp-greedy", "frontend-system-design"] },
+    { "day": "Day 13", "focus": "Behavioural stories, LLM integration, cheat sheet, and a full mock interview.", "docs": ["behavioral-hr", "ai-llm-integration", "last-day-cheatsheet"] }
   ]
 }

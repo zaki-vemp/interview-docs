@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-10-09",
+  "updated": "2026-10-27",
   "categories": [
     {
       "id": "profile",
@@ -76,9 +76,9 @@
             "revision",
             "cheatsheet"
           ],
-          "minutes": 25,
-          "questions": 19,
-          "hot": 11
+          "minutes": 30,
+          "questions": 20,
+          "hot": 12
         }
       ]
     },
@@ -550,8 +550,24 @@
       "id": "databases",
       "title": "Databases: SQL & NoSQL Deep Dive",
       "icon": "🗄️",
-      "description": "SQL from joins to window functions, indexing and query plans, transactions and locking, schema design, MongoDB, Redis and caching, and distributed data.",
+      "description": "Complete Beginner → Advanced → Expert SQL track for PostgreSQL & MySQL (fresher fundamentals, joins & window functions, engine internals, scalability & query efficiency, indexing, locking, schema design), plus MongoDB, Redis and distributed data.",
       "docs": [
+        {
+          "slug": "sql-fundamentals",
+          "title": "SQL Fundamentals: Fresher to Interview-Ready (PostgreSQL & MySQL)",
+          "description": "RDBMS mental models, DDL/DML/DQL/DCL/TCL, DELETE vs TRUNCATE vs DROP, data types, constraints, CRUD, NULL traps, CASE, aggregations, GROUP BY vs HAVING, all JOIN types, set operators, subqueries, CLI survival kit and fresher rapid-fire Q&A.",
+          "level": "Core",
+          "tags": [
+            "sql",
+            "fresher",
+            "postgres",
+            "mysql",
+            "fundamentals"
+          ],
+          "minutes": 45,
+          "questions": 30,
+          "hot": 26
+        },
         {
           "slug": "sql-mastery",
           "title": "SQL Mastery: Queries, Joins & Window Functions",
@@ -561,11 +577,64 @@
             "sql",
             "joins",
             "window-functions",
-            "postgres"
+            "postgres",
+            "mysql"
           ],
-          "minutes": 30,
-          "questions": 0,
-          "hot": 0
+          "minutes": 55,
+          "questions": 36,
+          "hot": 30
+        },
+        {
+          "slug": "postgresql-deep-dive",
+          "title": "PostgreSQL Deep Dive: Internals, MVCC, Tuning & Production",
+          "description": "Process & memory architecture, 8 KB heap pages & ctid, TOAST, MVCC, HOT updates & fillfactor, bloat & autovacuum math, XID wraparound, WAL & PITR, planner & CREATE STATISTICS, GIN/GiST/BRIN, RLS, partitioning, logical replication, PgBouncer and zero-downtime DDL.",
+          "level": "Expert",
+          "tags": [
+            "postgres",
+            "postgresql",
+            "mvcc",
+            "vacuum",
+            "wal",
+            "pgbouncer"
+          ],
+          "minutes": 35,
+          "questions": 24,
+          "hot": 21
+        },
+        {
+          "slug": "mysql-deep-dive",
+          "title": "MySQL & InnoDB Deep Dive: Internals, Locking, Tuning & PG Comparison",
+          "description": "Server vs storage engine layer, clustered PK B+Tree vs secondary double lookups, buffer pool LRU, change & doublewrite buffers, undo-log MVCC & ReadView, redo/binlog 2PC, record/gap/next-key locks, EXPLAIN key_len/ICP/MRR, utf8mb4, INSTANT DDL/gh-ost, Vitess and PG vs MySQL.",
+          "level": "Expert",
+          "tags": [
+            "mysql",
+            "innodb",
+            "locking",
+            "explain",
+            "vitess",
+            "sql"
+          ],
+          "minutes": 35,
+          "questions": 22,
+          "hot": 21
+        },
+        {
+          "slug": "sql-scalability-efficiency",
+          "title": "SQL Scalability, Query Efficiency & High-Scale Coding Patterns",
+          "description": "COUNT(*) replacements at 500M rows, SARGability rewrites, ESR composite index rule, keyset & deferred-join pagination, bulk writes & safe archiving, slotted hot-row counters, 100→500k RPS scaling ladder, causal LSN/GTID RYOW routing, sharding and 7 advanced PG+MySQL coding drills.",
+          "level": "Expert",
+          "tags": [
+            "sql",
+            "scalability",
+            "efficiency",
+            "performance",
+            "postgres",
+            "mysql",
+            "sharding"
+          ],
+          "minutes": 35,
+          "questions": 21,
+          "hot": 21
         },
         {
           "slug": "db-indexing-performance",
@@ -578,9 +647,9 @@
             "performance",
             "postgres"
           ],
-          "minutes": 30,
-          "questions": 0,
-          "hot": 0
+          "minutes": 45,
+          "questions": 29,
+          "hot": 20
         },
         {
           "slug": "db-transactions-locking",
@@ -594,9 +663,9 @@
             "locking",
             "saga"
           ],
-          "minutes": 30,
-          "questions": 0,
-          "hot": 0
+          "minutes": 40,
+          "questions": 28,
+          "hot": 20
         },
         {
           "slug": "db-schema-design",
@@ -609,9 +678,9 @@
             "migrations",
             "multi-tenancy"
           ],
-          "minutes": 30,
-          "questions": 0,
-          "hot": 0
+          "minutes": 45,
+          "questions": 28,
+          "hot": 22
         },
         {
           "slug": "nosql-mongodb",
@@ -624,9 +693,9 @@
             "cassandra",
             "elasticsearch"
           ],
-          "minutes": 30,
-          "questions": 0,
-          "hot": 0
+          "minutes": 40,
+          "questions": 27,
+          "hot": 20
         },
         {
           "slug": "redis-caching",
@@ -639,9 +708,9 @@
             "rate-limiting",
             "locks"
           ],
-          "minutes": 30,
-          "questions": 0,
-          "hot": 0
+          "minutes": 40,
+          "questions": 27,
+          "hot": 20
         },
         {
           "slug": "distributed-data",
@@ -655,9 +724,9 @@
             "consensus",
             "lsm"
           ],
-          "minutes": 30,
-          "questions": 0,
-          "hot": 0
+          "minutes": 40,
+          "questions": 24,
+          "hot": 20
         }
       ]
     },
@@ -679,9 +748,9 @@
             "modules",
             "streams"
           ],
-          "minutes": 30,
-          "questions": 0,
-          "hot": 0
+          "minutes": 40,
+          "questions": 26,
+          "hot": 21
         },
         {
           "slug": "nodejs-production",
@@ -695,9 +764,9 @@
             "observability",
             "kubernetes"
           ],
-          "minutes": 30,
-          "questions": 0,
-          "hot": 0
+          "minutes": 40,
+          "questions": 27,
+          "hot": 20
         },
         {
           "slug": "api-design",
@@ -711,9 +780,9 @@
             "webhooks",
             "openapi"
           ],
-          "minutes": 30,
-          "questions": 0,
-          "hot": 0
+          "minutes": 40,
+          "questions": 26,
+          "hot": 21
         },
         {
           "slug": "java-deep-dive",
@@ -727,9 +796,9 @@
             "concurrency",
             "java25"
           ],
-          "minutes": 30,
-          "questions": 0,
-          "hot": 0
+          "minutes": 45,
+          "questions": 27,
+          "hot": 21
         },
         {
           "slug": "spring-boot-deep-dive",
@@ -743,9 +812,9 @@
             "jpa",
             "transactions"
           ],
-          "minutes": 30,
-          "questions": 0,
-          "hot": 0
+          "minutes": 40,
+          "questions": 29,
+          "hot": 20
         },
         {
           "slug": "kotlin-deep-dive",
@@ -758,9 +827,9 @@
             "ktor",
             "spring-kotlin"
           ],
-          "minutes": 30,
-          "questions": 0,
-          "hot": 0
+          "minutes": 40,
+          "questions": 28,
+          "hot": 19
         },
         {
           "slug": "python-backend",
@@ -774,9 +843,9 @@
             "fastapi",
             "celery"
           ],
-          "minutes": 30,
-          "questions": 0,
-          "hot": 0
+          "minutes": 45,
+          "questions": 30,
+          "hot": 25
         }
       ]
     },

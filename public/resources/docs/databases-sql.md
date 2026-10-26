@@ -2,6 +2,8 @@
 
 Your resume lists **PostgreSQL**, and your ScaleCapacity projects ran on **DynamoDB** (Nebraska Draw, SCAI). Full-stack rounds often include **writing SQL queries** (joins, aggregates, window functions), **indexing and query plans**, **transactions and isolation**, and, for AWS-heavy roles, **DynamoDB key design**.
 
+For the full dedicated SQL track from beginner to staff level, see [SQL Fundamentals (Core)](/docs/sql-fundamentals), [SQL Mastery (Advanced)](/docs/sql-mastery), [PostgreSQL Deep Dive (Expert)](/docs/postgresql-deep-dive), [MySQL & InnoDB Deep Dive (Expert)](/docs/mysql-deep-dive), and [SQL Scalability & Efficiency (Expert)](/docs/sql-scalability-efficiency).
+
 > SQL isn't runnable in the playground. Each query lists its expected result in comments. Runnable JavaScript simulations show pagination and DynamoDB access-pattern concepts.
 
 **Sample schema used in the examples:**
